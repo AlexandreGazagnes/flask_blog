@@ -26,3 +26,5 @@ mail = Mail(app)
 
 from flaskblog import routes
 from flaskblog.models import User, Post
+
+# update
