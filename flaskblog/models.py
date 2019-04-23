@@ -1,7 +1,7 @@
 from datetime import datetime
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flaskblog import db, login_manager, app
 from flask_login import UserMixin
-from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
 
 @login_manager.user_loader
@@ -35,6 +35,7 @@ class User(db.Model, UserMixin):
         return User.query.get(user_id)
 
     def __repr__(self):
+
         return f"user({self.id}, {self.username}, {self.email}, {self.image_file})"
 
 
@@ -48,4 +49,4 @@ class Post(db.Model, UserMixin):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):
-        return f"post({self.id}, {self.title}, {self.date_posted}, {self.user_id})"
+        return f"Post('{self.title}', '{self.date_posted}')"

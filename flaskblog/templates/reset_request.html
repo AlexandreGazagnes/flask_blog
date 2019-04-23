@@ -1,3 +1,4 @@
+
 {% extends "layout.html" %}
 {% block content %}
     <div class="content-section">
@@ -18,10 +19,10 @@
                         {{ form.email(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
-           <div class="form-group">
+            </fieldset>
+            <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
-
         </form>
     </div>
 {% endblock content %}
